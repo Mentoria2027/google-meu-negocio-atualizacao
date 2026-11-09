@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Presença Local</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <h1>Presença Local</h1>
+        <span>Google Meu Negócio / Site / WhatsApp</span>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="cards">
+        <div class="card stat">
+          <span>Total</span>
+          <strong id="stat-total">0</strong>
+        </div>
+        <div class="card stat">
+          <span>Novo</span>
+          <strong id="stat-novo">0</strong>
+        </div>
+        <div class="card stat">
+          <span>Interessado</span>
+          <strong id="stat-interessado">0</strong>
+        </div>
+        <div class="card stat">
+          <span>Cliente</span>
+          <strong id="stat-cliente">0</strong>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Adicionar comércio</h2>
+        <form id="form-business">
+          <div class="grid">
+            <label>
+              Nome
+              <input type="text" name="nome" required />
+            </label>
+            <label>
+              Categoria
+              <input type="text" name="categoria" />
+            </label>
+            <label>
+              Cidade
+              <input type="text" name="cidade" />
+            </label>
+            <label>
+              WhatsApp
+              <input type="text" name="whatsapp" placeholder="(99) 99999-9999" />
+            </label>
+            <label>
+              Site
+              <input type="text" name="website" placeholder="https://" />
+            </label>
+            <label>
+              Google Maps
+              <input type="text" name="google_url" placeholder="https://maps.google.com/..." />
+            </label>
+            <label>
+              Endereço
+              <input type="text" name="endereco" />
+            </label>
+            <label>
+              Status
+              <select name="status">
+                <option value="novo">Novo</option>
+                <option value="contatado">Contatado</option>
+                <option value="respondeu">Respondeu</option>
+                <option value="interessado">Interessado</option>
+                <option value="cliente">Cliente</option>
+                <option value="nao_quero">Não quero</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            Observações
+            <textarea name="observacoes" rows="3"></textarea>
+          </label>
+
+          <label>
+            Valor do serviço / pacote
+            <input type="text" name="valor" placeholder="R$ 299 ou Site + Google" />
+          </label>
+
+          <div class="actions">
+            <button type="submit">Salvar</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel table-panel">
+        <div class="filters">
+          <h2>Lista de comércios</h2>
+          <div class="filter-row">
+            <select id="filter-status">
+              <option value="">Todos</option>
+              <option value="novo">Novo</option>
+              <option value="contatado">Contatado</option>
+              <option value="respondeu">Respondeu</option>
+              <option value="interessado">Interessado</option>
+              <option value="cliente">Cliente</option>
+              <option value="nao_quero">Não quero</option>
+            </select>
+            <input id="filter-cidade" type="text" placeholder="Filtrar por cidade" />
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Cidade</th>
+                <th>WhatsApp</th>
+                <th>Status</th>
+                <th>Valor</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="business-list"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
